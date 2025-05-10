@@ -1,0 +1,32 @@
+name: Deploy to Kubernetes
+
+on:
+  push:
+    branches:
+      - main  # Or your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Kubeconfig
+        uses: azure/setup-kubectl@v3
+        with:
+          version: 'latest'
+
+      - name: Set up Minikube (optional for local dev)
+        uses: medyagh/setup-minikube@v0.0.14
+        with:
+          minikube-version: 'latest'
+
+      - name: Start Minikube
+        run: minikube start --driver=docker
+
+      - name: Apply Kubernetes manifests
+        run: |
+          kubectl apply -f deployment.yaml
+          kubectl apply -f service.yaml

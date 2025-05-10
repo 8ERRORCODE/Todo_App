@@ -1,0 +1,57 @@
+*{
+  background-color: rgb(198, 174, 255);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+.task-list{
+  color: blueviolet;
+}
+form{
+  display: flex;
+  flex-direction: column;
+}
+.cin{
+  border-radius: 5px;
+  width: 20rem;
+  height: 1.5rem;
+  color: white;
+  background-color: blueviolet;
+}
+.btn{
+  width: 5rem;
+  margin-top: 8px;
+  border-radius: 4px;
+  background-color: blueviolet;
+}
+
+li{
+  border: 3px solid rgb(33, 33, 68);
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+
+}
+li,p{
+  background: #4776E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8E54E9, #4776E6);
+  background: linear-gradient(to right, #8E54E9, #4776E6);
+}
+li::marker{
+  content: none;
+  
+}
+p{
+  padding-top: 10px;
+  text-align: left;
+}
+
+.delete-btn{
+  width: 5rem;
+  border-radius: 4px;
+  background-color: blueviolet;
+}
+input::placeholder{
+  color: white;
+}
